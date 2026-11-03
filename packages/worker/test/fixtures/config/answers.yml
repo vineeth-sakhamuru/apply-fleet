@@ -1,0 +1,104 @@
+# Fake test persona. Worker tests load this instead of the real (gitignored)
+# config, so they run the same on every machine and in CI. Keys mirror
+# config/answers.example.yml; values are invented.
+
+identity:
+  first_name: "Jordan"
+  middle_name: ""
+  last_name: "Example"
+  full_legal_name: "Jordan Example"
+  date_of_birth: "2000-01-01"
+
+contact:
+  email: "jordan@example.com"
+  email_secondary: ""
+  phone: "000-000-0000"
+  address_line1: "1 Example St"
+  address_line2: ""
+  city: "Austin"
+  state: "TX"
+  postal_code: "00000"
+  state_full: "Texas"
+  country: "United States"
+  linkedin: "https://www.linkedin.com/in/example/"
+  github: "https://github.com/example"
+
+authorization:
+  work_authorization: "U.S. Citizen"
+  authorized_to_work_us: true
+  requires_sponsorship: false
+  requires_sponsorship_future: false
+  over_18: true
+  citizenship_status: "U.S. Citizen"
+  security_clearance: "None"
+
+relocation:
+  willing_to_relocate: true
+  relocation_scope: "Anywhere in the US"
+  remote_ok: true
+
+availability:
+  earliest_start_date: "June 2027"
+  intern_start: "Summer 2027"
+  notice_period_days: 30
+
+education:
+  - level: "Master's"
+    degree: "MS, Computer Science"
+    school: "State University"
+    location: "Austin, TX"
+    start: "2025-09"
+    end: "2027-05"
+    graduation: "May 2027"
+    gpa: "3.5"
+  - level: "Bachelor's"
+    degree: "B.S. Computer Science"
+    school: "State University"
+    location: "Austin, TX"
+    start: "2021-09"
+    end: "2025-05"
+    gpa: ""
+
+experience:
+  currently_employed: false
+  most_recent_title: "Software Engineer Intern"
+  most_recent_company: "Acme Corp"
+
+skills:
+  languages: "Python, SQL"
+  technologies: "FastAPI, PostgreSQL, Docker"
+
+skills_years:
+  Python: 3
+  SQL: 2
+
+compensation:
+  desired_total_comp: "$100,000"
+  minimum_total_comp: "$100,000"
+  currency: "USD"
+
+# Self-ID the persona provided (gender, race) fills; anything unset declines.
+eeo:
+  gender: "Male"
+  race_ethnicity: "Asian"
+  veteran_status: "not a protected veteran"
+  disability_status: "No, I don't have a disability"
+  pronouns: ""
+  hispanic_latino: "No"
+
+standard_questions:
+  - q: "Are you legally authorized to work in the United States?"
+    a: "Yes"
+    source: "profile"
+  - q: "Will you now or in the future require sponsorship for employment visa status?"
+    a: "No"
+    source: "profile"
+  - q: "Are you at least 18 years of age?"
+    a: "Yes"
+    source: "profile"
+  - q: "Are you willing to relocate?"
+    a: "Yes"
+    source: "you"
+  - q: "How did you hear about this position?"
+    a: "Company website"
+    source: "you"

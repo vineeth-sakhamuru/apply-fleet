@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, writeFileSync, mkdtempSync } from 'node:fs';
+import { writeFileSync, mkdtempSync } from 'node:fs';
 import { resolve as resolvePath, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { tmpdir } from 'node:os';
@@ -12,10 +12,9 @@ import type { ResolveCtx } from '../src/index.ts';
 import type { Application } from '@apply-fleet/shared';
 
 const root = resolvePath(import.meta.dirname, '../../..');
-const pick = (n: string) => {
-  const real = resolvePath(root, `config/${n}.yml`);
-  return existsSync(real) ? real : resolvePath(root, `config/${n}.example.yml`);
-};
+// Hermetic: a committed fake persona, never the real (gitignored) config.
+process.env.APPLY_FLEET_CONFIG_DIR = resolvePath(import.meta.dirname, 'fixtures/config');
+const pick = (n: string) => resolvePath(process.env.APPLY_FLEET_CONFIG_DIR!, `${n}.yml`);
 const ctx: ResolveCtx = { profile: loadProfile(pick('profile')), answers: loadAnswers(pick('answers')) };
 const A = ctx.answers as unknown as Record<string, any>;
 

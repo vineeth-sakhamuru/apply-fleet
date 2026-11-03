@@ -267,7 +267,7 @@ export async function tryLlmBatch(
   draft: Drafter = draftFromProviders,
 ): Promise<Map<string, Resolution>> {
   const out = new Map<string, Resolution>();
-  if (!fields.length || !anyProviderConfigured()) return out;
+  if (!fields.length || (draft === draftFromProviders && !anyProviderConfigured())) return out;
 
   // One vault lookup for the whole form, not one per question.
   const snippets = await vaultContext(fields.map((f) => f.label).join(' '));

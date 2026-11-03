@@ -1,6 +1,5 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
 import { resolve as resolvePath } from 'node:path';
 import { loadAnswers, loadProfile } from '@apply-fleet/data';
 import { resolve, DECLINE, GROUNDED } from '../src/index.ts';
@@ -19,10 +18,9 @@ import {
 process.env.APPLY_FLEET_NO_LLM = '1';
 
 const root = resolvePath(import.meta.dirname, '../../..');
-const pick = (name: string) => {
-  const real = resolvePath(root, `config/${name}.yml`);
-  return existsSync(real) ? real : resolvePath(root, `config/${name}.example.yml`);
-};
+// Hermetic: a committed fake persona, never the real (gitignored) config.
+process.env.APPLY_FLEET_CONFIG_DIR = resolvePath(import.meta.dirname, 'fixtures/config');
+const pick = (name: string) => resolvePath(process.env.APPLY_FLEET_CONFIG_DIR!, `${name}.yml`);
 
 const ctx: ResolveCtx = {
   profile: loadProfile(pick('profile')),

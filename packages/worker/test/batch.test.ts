@@ -1,6 +1,5 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
 import { resolve as resolvePath } from 'node:path';
 import { loadAnswers, loadProfile } from '@apply-fleet/data';
 import { tryLlmBatch, buildBatchPrompt, parseBatchAnswers } from '../src/llm.ts';
@@ -12,10 +11,9 @@ import { UNTRUSTED_OPEN } from '../src/sanitize.ts';
 // round trip for every open-ended field, each blind to the rest of the form.
 
 const root = resolvePath(import.meta.dirname, '../../..');
-const pick = (n: string) => {
-  const real = resolvePath(root, `config/${n}.yml`);
-  return existsSync(real) ? real : resolvePath(root, `config/${n}.example.yml`);
-};
+// Hermetic: a committed fake persona, never the real (gitignored) config.
+process.env.APPLY_FLEET_CONFIG_DIR = resolvePath(import.meta.dirname, 'fixtures/config');
+const pick = (n: string) => resolvePath(process.env.APPLY_FLEET_CONFIG_DIR!, `${n}.yml`);
 const ctx: ResolveCtx = { profile: loadProfile(pick('profile')), answers: loadAnswers(pick('answers')) };
 
 const field = (label: string, kind: FieldSpec['kind'] = 'textarea'): FieldSpec => ({
