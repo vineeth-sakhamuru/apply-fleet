@@ -1,0 +1,36 @@
+# apply-fleet — proxy mailbox (TEMPLATE).
+# Copy to config/mailbox.yml and fill in. No secret goes in this file: the app
+# password is read from the environment, not from config.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# MANUAL SETUP (one-time, done by you — the system cannot do these steps):
+#
+#   1. Create a dedicated Gmail for applications, e.g. yourname.apply@gmail.com.
+#      Use this inbox for nothing else. (Account creation + any CAPTCHA is
+#      yours to do; apply-fleet never creates accounts or solves CAPTCHAs.)
+#   2. Turn on 2-Step Verification for that account:
+#      Google Account → Security → 2-Step Verification → turn on.
+#      (An App Password cannot be generated until 2-Step is on.)
+#   3. Generate an App Password:
+#      Google Account → Security → App passwords → create one named
+#      "apply-fleet". Google shows a 16-character password once — copy it.
+#   4. Put it in your shell environment (NOT in this file, NOT in git):
+#        export APPLY_FLEET_GMAIL_APP_PASSWORD='xxxxxxxxxxxxxxxx'
+#      apply-fleet reads it from that variable at runtime.
+#
+# IMAP is on by default for Gmail; no extra toggle is needed with an App
+# Password. Everything sent to `base_address` with a `+tag` lands in this one
+# inbox, which is how per-application aliases work with zero extra setup.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# The base inbox. Per-application aliases are derived as local+<hash>@domain.
+base_address: "yourname.apply@gmail.com"
+
+imap:
+  host: "imap.gmail.com" # Gmail IMAP (port 993, TLS — set in code)
+  user: "yourname.apply@gmail.com" # same as base_address
+
+# Name of the environment variable holding the Gmail App Password.
+# The value lives in your shell env, never here. (Will route through
+# @apply-fleet/secure / macOS Keychain once that package lands.)
+app_password_env: "APPLY_FLEET_GMAIL_APP_PASSWORD"

@@ -1,0 +1,56 @@
+# apply-fleet — résumé source of truth (TEMPLATE).
+# Copy to config/resume.yml with your REAL bullets. Each bullet's `tags` are the
+# skills it legitimately evidences; the tailor may only select/reorder/reword
+# these — the verifier rejects any claim not backed by a source bullet.
+
+basics:
+  name: "Jordan Example"
+  email: "jordan@example.com"
+  phone: "000-000-0000"
+  location: "City, ST"
+  links:
+    - "github.com/example"
+    - "linkedin.com/in/example"
+
+experience:
+  - company: "Acme Corp"
+    role: "Software Engineer Intern"
+    start: "2024-06"
+    end: "2024-09"
+    bullets:
+      - id: "acme-1"
+        text: "Built REST APIs in Python and FastAPI serving 10k requests/day"
+        tags: ["python", "fastapi", "rest", "api", "backend"]
+      - id: "acme-2"
+        text: "Optimized PostgreSQL queries, cutting p95 latency 40%"
+        tags: ["postgresql", "sql", "performance"]
+      - id: "acme-3"
+        text: "Wrote unit and integration tests raising coverage to 90%"
+        tags: ["testing", "ci/cd"]
+  - company: "Beta Labs"
+    role: "Software Engineer Co-op"
+    start: "2023-06"
+    end: "2023-08"
+    bullets:
+      - id: "beta-1"
+        text: "Shipped a React dashboard in TypeScript used by 200 internal users"
+        tags: ["react", "typescript", "javascript", "frontend"]
+      - id: "beta-2"
+        text: "Containerized services with Docker for reproducible local dev"
+        tags: ["docker"]
+
+education:
+  - school: "State University"
+    degree: "B.S. Computer Science"
+    start: "2021-09"
+    end: "2025-05"
+    detail: "GPA 3.7"
+
+skills:
+  - "Python"
+  - "FastAPI"
+  - "TypeScript"
+  - "React"
+  - "PostgreSQL"
+  - "Docker"
+  - "SQL"

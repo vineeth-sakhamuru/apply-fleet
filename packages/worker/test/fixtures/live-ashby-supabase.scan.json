@@ -1,0 +1,74 @@
+{
+  "capturedFrom": "https://jobs.ashbyhq.com/supabase/3b5d54ca-741b-45ac-bd3f-31605a0d3541/application",
+  "capturedAt": "2026-08-05T20:15:07.199Z",
+  "fieldCount": 13,
+  "requiredCount": 8,
+  "fields": [
+    {
+      "label": "",
+      "kind": "file",
+      "required": false
+    },
+    {
+      "label": "Name",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Email",
+      "kind": "email",
+      "required": true
+    },
+    {
+      "label": "Resume",
+      "kind": "file",
+      "required": true
+    },
+    {
+      "label": "Passport Country",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Country of Residence",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Twitter / X profile",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "label": "Github Profile",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Linkedin",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Tell us about your experience working in an async and/or remote environment. What practices or approaches have worked well for you? What challenges have you faced?",
+      "kind": "textarea",
+      "required": true
+    },
+    {
+      "label": "Have you made any open source contributions in the past that you'd like to share with us?",
+      "kind": "textarea",
+      "required": false
+    },
+    {
+      "label": "Where did you hear about this vacancy?",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "label": "Are you over the age of 18?",
+      "kind": "choice",
+      "required": false
+    }
+  ],
+  "hitl": 0
+}

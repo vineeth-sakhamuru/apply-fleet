@@ -1,0 +1,21 @@
+{
+  "jobs": [
+    {
+      "id": 5501234,
+      "title": "Software Engineer, Backend",
+      "updated_at": "2026-07-20T18:30:00-04:00",
+      "location": { "name": "Seattle, WA" },
+      "absolute_url": "https://boards.greenhouse.io/stripe/jobs/5501234",
+      "content": "<p>Build payments infrastructure.</p>"
+    },
+    {
+      "id": 5509876,
+      "title": "New Grad Software Engineer",
+      "updated_at": "2026-07-21T09:15:00-04:00",
+      "location": { "name": "Remote - US" },
+      "absolute_url": "https://boards.greenhouse.io/stripe/jobs/5509876",
+      "content": "<p>Early-career track.</p>"
+    }
+  ],
+  "meta": { "total": 2 }
+}

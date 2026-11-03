@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8" /><title>Lever fixture</title></head>
+  <body>
+    <form>
+      <!-- Core fields: Lever puts the label in .application-label .text -->
+      <div class="application-question">
+        <div class="application-label"><div class="text">Full name<span class="required">✱</span></div></div>
+        <input type="text" name="name" required />
+      </div>
+      <div class="application-question">
+        <div class="application-label"><div class="text">Email<span class="required">✱</span></div></div>
+        <input type="email" name="email" required />
+      </div>
+      <div class="application-question">
+        <div class="application-label"><div class="text">Resume/CV<span class="required">✱</span></div></div>
+        <input type="file" name="resume" />
+      </div>
+      <!-- Label bleed case: dynamic status text sits in .application-label but
+           OUTSIDE .text — cardLabel must read only "Current location". -->
+      <div class="application-question">
+        <div class="application-label">
+          <div class="text">Current location<span class="required">✱</span></div>
+          <div class="dropdown-hint">No location found. Try entering a different location</div>
+        </div>
+        <input type="text" name="location" />
+      </div>
+
+      <!-- Work authorization: custom card, Yes/No radios named cards[uuid][field0] -->
+      <div class="application-question custom-question">
+        <div class="application-label full-width multiple-choice">
+          <div class="text">Are you legally authorized to work in the country for which you are applying?<span class="required">✱</span></div>
+        </div>
+        <div class="application-field required-field">
+          <ul data-qa="multiple-choice">
+            <li><label><input type="radio" name="cards[a11][field0]" value="Yes" required /><span class="application-answer-alternative">Yes</span></label></li>
+            <li><label><input type="radio" name="cards[a11][field0]" value="No" required /><span class="application-answer-alternative">No</span></label></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sponsorship: SEPARATE card, its own radio group -->
+      <div class="application-question custom-question">
+        <div class="application-label full-width multiple-choice">
+          <div class="text">Will you now or in the future require sponsorship for employment visa status?<span class="required">✱</span></div>
+        </div>
+        <div class="application-field required-field">
+          <ul data-qa="multiple-choice">
+            <li><label><input type="radio" name="cards[b22][field0]" value="Yes" required /><span class="application-answer-alternative">Yes</span></label></li>
+            <li><label><input type="radio" name="cards[b22][field0]" value="No" required /><span class="application-answer-alternative">No</span></label></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- "Check all that apply": many checkboxes share ONE name — must collapse -->
+      <div class="application-question custom-question">
+        <div class="application-label full-width multiple-choice">
+          <div class="text">Language Skill(s) (Check all that apply)<span class="required">✱</span></div>
+        </div>
+        <div class="application-field required-field">
+          <ul>
+            <li><label><input type="checkbox" name="cards[c33][field0]" value="English (ENG)" /><span class="application-answer-alternative">English (ENG)</span></label></li>
+            <li><label><input type="checkbox" name="cards[c33][field0]" value="Spanish (SPA)" /><span class="application-answer-alternative">Spanish (SPA)</span></label></li>
+            <li><label><input type="checkbox" name="cards[c33][field0]" value="French (FRA)" /><span class="application-answer-alternative">French (FRA)</span></label></li>
+            <li><label><input type="checkbox" name="cards[c33][field0]" value="German (DEU)" /><span class="application-answer-alternative">German (DEU)</span></label></li>
+            <li><label><input type="checkbox" name="cards[c33][field0]" value="Hindi (HIN)" /><span class="application-answer-alternative">Hindi (HIN)</span></label></li>
+            <li><label><input type="checkbox" name="cards[c33][field0]" value="Telugu (TEL)" /><span class="application-answer-alternative">Telugu (TEL)</span></label></li>
+            <li><label><input type="checkbox" name="cards[c33][field0]" value="Mandarin (MAN)" /><span class="application-answer-alternative">Mandarin (MAN)</span></label></li>
+            <li><label><input type="checkbox" name="cards[c33][field0]" value="Other" /><span class="application-answer-alternative">Other</span></label></li>
+          </ul>
+        </div>
+      </div>
+
+      <button type="submit" class="postings-btn">Submit application</button>
+    </form>
+  </body>
+</html>

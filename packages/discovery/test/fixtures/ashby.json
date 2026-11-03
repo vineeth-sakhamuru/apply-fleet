@@ -1,0 +1,22 @@
+{
+  "jobs": [
+    {
+      "id": "a1b2c3d4-0001-0002-0003-000400050006",
+      "title": "Full Stack Engineer",
+      "location": "Remote, US",
+      "publishedAt": "2026-07-19T12:00:00.000Z",
+      "employmentType": "FullTime",
+      "jobUrl": "https://jobs.ashbyhq.com/linear/a1b2c3d4-0001-0002-0003-000400050006",
+      "applyUrl": "https://jobs.ashbyhq.com/linear/a1b2c3d4-0001-0002-0003-000400050006/application"
+    },
+    {
+      "id": "a1b2c3d4-0007-0008-0009-001000110012",
+      "title": "Software Engineer, Infrastructure",
+      "location": "New York, NY",
+      "publishedAt": "2026-07-20T16:45:00.000Z",
+      "employmentType": "FullTime",
+      "jobUrl": "https://jobs.ashbyhq.com/linear/a1b2c3d4-0007-0008-0009-001000110012",
+      "applyUrl": "https://jobs.ashbyhq.com/linear/a1b2c3d4-0007-0008-0009-001000110012/application"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@apply-fleet/resume",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/tailor.test.ts test/verify.test.ts test/traceable.test.ts test/build.test.ts test/html.test.ts test/pdf.test.ts"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^4.10.38",
+    "yaml": "^2.6.0"
+  },
+  "devDependencies": {
+    "patchright": "^1.49.0"
+  }
+}

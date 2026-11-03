@@ -1,0 +1,16 @@
+{
+  "name": "@apply-fleet/mailbox",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/alias.test.ts test/reader.test.ts test/verify.test.ts"
+  },
+  "dependencies": {
+    "imapflow": "^1.0.191",
+    "mailparser": "^3.7.2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@apply-fleet/matching",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/eligibility.test.ts test/rank.test.ts test/score.test.ts"
+  },
+  "dependencies": {
+    "@apply-fleet/shared": "*",
+    "@apply-fleet/discovery": "*"
+  }
+}

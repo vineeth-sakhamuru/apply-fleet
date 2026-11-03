@@ -1,0 +1,13 @@
+{
+  "name": "@apply-fleet/secure",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/secret.test.ts test/redact.test.ts test/config-perms.test.ts test/secret-scan.test.ts"
+  }
+}

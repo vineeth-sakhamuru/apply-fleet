@@ -1,0 +1,109 @@
+<!doctype html>
+<!-- Golden fixture modeled on a Greenhouse application form (Notion's ATS).
+     #first_name is "controlled": it mirrors its value to data-state ONLY on a
+     real input event, so a naive value assignment would not update it — this
+     proves the React-safe fill. The submit button records a click flag; the
+     engine must never set it. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Notion — New Grad Software Engineer</title>
+  </head>
+  <body>
+    <h1>Apply: New Grad Software Engineer</h1>
+    <form id="application_form" onsubmit="return false">
+      <label for="first_name">First Name *</label>
+      <input id="first_name" name="first_name" type="text" required />
+
+      <label for="last_name">Last Name *</label>
+      <input id="last_name" name="last_name" type="text" required />
+
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" required />
+
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" />
+
+      <label for="linkedin">LinkedIn Profile</label>
+      <input id="linkedin" name="linkedin" type="url" />
+
+      <label for="school">School *</label>
+      <input id="school" name="school" type="text" required />
+
+      <label for="degree">Degree</label>
+      <input id="degree" name="degree" type="text" />
+
+      <label for="resume">Resume/CV *</label>
+      <input id="resume" name="resume" type="file" required />
+
+      <label for="work_auth">Are you legally authorized to work in the United States? *</label>
+      <select id="work_auth" name="work_auth" required>
+        <option value="">Select…</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="sponsorship">Will you now or in the future require sponsorship for employment visa status? *</label>
+      <select id="sponsorship" name="sponsorship" required>
+        <option value="">Select…</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="why">Why do you want to work at Notion?</label>
+      <textarea id="why" name="why"></textarea>
+
+      <h2>Voluntary Self-Identification</h2>
+      <label for="eeo_gender">Gender</label>
+      <select id="eeo_gender" name="eeo_gender">
+        <option value="">Select…</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="nonbinary">Non-binary</option>
+        <option value="decline">Decline to self-identify</option>
+      </select>
+
+      <label for="eeo_race">Race / Ethnicity</label>
+      <select id="eeo_race" name="eeo_race">
+        <option value="">Select…</option>
+        <option value="asian">Asian</option>
+        <option value="white">White</option>
+        <option value="black">Black or African American</option>
+        <option value="hispanic">Hispanic or Latino</option>
+        <option value="decline">Decline to self-identify</option>
+      </select>
+
+      <label for="eeo_veteran">Veteran Status</label>
+      <select id="eeo_veteran" name="eeo_veteran">
+        <option value="">Select…</option>
+        <option value="notveteran">I am not a protected veteran</option>
+        <option value="veteran">I identify as a protected veteran</option>
+        <option value="decline">Decline to self-identify</option>
+      </select>
+
+      <label for="eeo_disability">Disability Status</label>
+      <select id="eeo_disability" name="eeo_disability">
+        <option value="">Select…</option>
+        <option value="no">No, I do not have a disability</option>
+        <option value="yes">Yes, I have a disability</option>
+        <option value="decline">I do not want to answer</option>
+      </select>
+
+      <button id="submit_app" type="submit">Submit Application</button>
+    </form>
+
+    <script>
+      // Record a submit click on the DOM (visible across execution contexts).
+      document
+        .getElementById('submit_app')
+        .addEventListener('click', (e) => {
+          e.currentTarget.setAttribute('data-clicked', '1');
+        });
+      // "Controlled" input: state updates only on a real input event.
+      const fn = document.getElementById('first_name');
+      fn.addEventListener('input', (e) => {
+        e.target.dataset.state = e.target.value;
+      });
+    </script>
+  </body>
+</html>

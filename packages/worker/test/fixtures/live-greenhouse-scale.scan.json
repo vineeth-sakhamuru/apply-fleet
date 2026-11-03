@@ -1,0 +1,109 @@
+{
+  "capturedFrom": "https://job-boards.greenhouse.io/scaleai/jobs/4718917005",
+  "capturedAt": "2026-08-05T20:14:16.708Z",
+  "fieldCount": 20,
+  "requiredCount": 9,
+  "fields": [
+    {
+      "label": "First Name*",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Last Name*",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Email*",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Country*",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Search",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "label": "Phone*",
+      "kind": "tel",
+      "required": true
+    },
+    {
+      "label": "Location (City)*",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Attach",
+      "kind": "file",
+      "required": false
+    },
+    {
+      "label": "Attach",
+      "kind": "file",
+      "required": false
+    },
+    {
+      "label": "LinkedIn Profile",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "label": "Website",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "label": "Are you open to working in person in our San Francisco or New York office 3 times a week?",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "label": "Are you currently bound by any agreements with a current or former employer that may restrict your ability to work for Scale AI or perform the duties of the position for which you are applying? \nThis includes, but is not limited to, non-compete agreements, non-solicitation agreements, confidentiality or non-disclosure agreements, or any other contractual obligations that could limit your employment activities.*",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "If yes, please provide further explanation below.",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "label": "Are you legally authorized to work in the country where the job is located?*",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Will you now or in the future require company sponsorship to retain or extend your work authorization in the country where the job is located?*",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "label": "Gender",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "label": "Are you Hispanic/Latino?",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "label": "Veteran Status",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "label": "Disability Status",
+      "kind": "text",
+      "required": false
+    }
+  ],
+  "hitl": 0
+}

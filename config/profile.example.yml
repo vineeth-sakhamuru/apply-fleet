@@ -1,0 +1,36 @@
+# apply-fleet — candidate profile (TEMPLATE).
+# Copy to config/profile.yml and fill in. The real file is gitignored (PII).
+
+candidate:
+  full_name: "First Last"
+  email: "you@example.com"
+  phone: "000-000-0000"
+  location: "City, ST"
+  linkedin: ""
+  github: ""
+  portfolio_url: ""
+
+target_roles:
+  primary:
+    - "Software Engineer"
+  archetypes:
+    - name: "Backend / Distributed Systems Engineer"
+      level: "New Grad / Early Career"
+      fit: "primary"
+
+narrative:
+  headline: ""
+  exit_story: ""
+  superpowers: []
+
+compensation:
+  target_range: ""
+  currency: "USD"
+  minimum: ""
+
+location:
+  country: "United States"
+  city: ""
+  timezone: ""
+  visa_status: ""
+  onsite_availability: ""

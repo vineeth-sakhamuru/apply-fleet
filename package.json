@@ -1,0 +1,18 @@
+{
+  "name": "apply-fleet",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Autonomous, high-volume, defensible-quality job-application system (local-first, product-ready).",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @apply-fleet/web",
+    "build": "npm run build -w @apply-fleet/web",
+    "preview": "npm run preview -w @apply-fleet/web",
+    "test": "npm test --workspaces --if-present"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.8.1"
+  }
+}

@@ -1,0 +1,87 @@
+# apply-fleet — application answer cache (TEMPLATE).
+# Copy to config/answers.yml and fill in. The real file is gitignored (PII).
+# EEO fields must stay blank / "decline" — never self-identify.
+
+identity:
+  first_name: "First"
+  middle_name: ""
+  last_name: "Last"
+  full_legal_name: "First Last"
+  date_of_birth: "YYYY-MM-DD"
+
+contact:
+  email: "you@example.com"
+  email_secondary: ""
+  phone: "000-000-0000"
+  address_line1: ""
+  address_line2: ""
+  city: ""
+  state: ""
+  postal_code: ""
+  country: "United States"
+  linkedin: ""
+  github: ""
+
+authorization:
+  work_authorization: "U.S. Citizen | Permanent Resident | Visa (specify)"
+  authorized_to_work_us: true
+  requires_sponsorship: false
+  requires_sponsorship_future: false
+  over_18: true
+  citizenship_status: ""
+  security_clearance: "None"
+
+relocation:
+  willing_to_relocate: true
+  relocation_scope: "Anywhere in the US"
+  remote_ok: true
+
+availability:
+  earliest_start_date: "Flexible"
+  notice_period_days: 30
+
+education:
+  - level: "Master's"
+    degree: ""
+    school: ""
+    location: ""
+    start: "YYYY-MM"
+    end: "YYYY-MM"
+    graduation: ""
+    gpa: ""
+  - level: "Bachelor's"
+    degree: ""
+    school: ""
+    location: ""
+    start: "YYYY-MM"
+    end: "YYYY-MM"
+    gpa: ""
+
+experience:
+  current_title: ""
+  current_company: ""
+  current_hours_per_week: 40
+
+skills_years:
+  Python: 0
+  SQL: 0
+
+compensation:
+  desired_total_comp: ""
+  minimum_total_comp: ""
+  currency: "USD"
+
+eeo:
+  gender: ""
+  race_ethnicity: ""
+  veteran_status: "Decline to self-identify"
+  disability_status: "Decline to self-identify"
+  pronouns: ""
+
+standard_questions:
+  - q: "Are you legally authorized to work in the United States?"
+    a: "Yes"
+    source: "profile"
+  - q: "Will you now or in the future require sponsorship for employment visa status?"
+    a: "No"
+    source: "profile"

@@ -1,0 +1,14 @@
+{
+  "result": [
+    {
+      "id": "42",
+      "jobOpeningName": "ACCOUNT MANAGER 2",
+      "location": { "city": "Kingston", "state": null }
+    },
+    {
+      "id": "45",
+      "jobOpeningName": "Sales Officer-FIP",
+      "location": { "city": "Kingston", "state": null }
+    }
+  ]
+}

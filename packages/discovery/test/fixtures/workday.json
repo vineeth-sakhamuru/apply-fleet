@@ -1,0 +1,41 @@
+{
+  "total": 2000,
+  "jobPostings": [
+    {
+      "title": "Industry Partner Business Manager",
+      "externalPath": "/job/US-CA-Remote/Industry-Partner-Business-Manager_JR2022252",
+      "locationsText": "US, CA, Remote",
+      "postedOn": "Posted Today",
+      "bulletFields": [
+        "JR2022252"
+      ]
+    },
+    {
+      "title": "Product Manager - Open Models",
+      "externalPath": "/job/US-CA-Santa-Clara/Product-Manager---Open-Models_JR2009572-1",
+      "locationsText": "US, CA, Santa Clara",
+      "postedOn": "Posted Today",
+      "bulletFields": [
+        "JR2009572"
+      ]
+    },
+    {
+      "title": "Senior Full Stack Software Engineer - DGX Cloud",
+      "externalPath": "/job/US-NC-Remote/Senior-Full-Stack-Software-Engineer---DGX-Cloud_JR2021832",
+      "locationsText": "5 Locations",
+      "postedOn": "Posted Today",
+      "bulletFields": [
+        "JR2021832"
+      ]
+    },
+    {
+      "title": "Senior PR Manager, Networking",
+      "externalPath": "/job/US-CA-Santa-Clara/Senior-PR-Manager--Networking_JR2018636",
+      "locationsText": "US, CA, Santa Clara",
+      "postedOn": "Posted Today",
+      "bulletFields": [
+        "JR2018636"
+      ]
+    }
+  ]
+}

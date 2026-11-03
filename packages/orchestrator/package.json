@@ -1,0 +1,22 @@
+{
+  "name": "@apply-fleet/orchestrator",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "serve": "node bin/serve.ts",
+    "test": "node --test test/orchestrator.test.ts test/server.test.ts test/auto-submit.test.ts test/rephrase.test.ts test/submit-blocked.test.ts"
+  },
+  "dependencies": {
+    "@apply-fleet/data": "*",
+    "@apply-fleet/discovery": "*",
+    "@apply-fleet/matching": "*",
+    "@apply-fleet/resume": "*",
+    "@apply-fleet/secure": "*",
+    "@apply-fleet/shared": "*",
+    "@apply-fleet/worker": "*"
+  }
+}

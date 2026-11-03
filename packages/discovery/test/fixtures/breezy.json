@@ -1,0 +1,28 @@
+[
+  {
+    "id": "98323abf2296",
+    "friendly_id": "98323abf2296-employee-12",
+    "name": "Employee #12",
+    "url": "https://breezy.breezy.hr/p/98323abf2296-employee-12",
+    "published_date": "2024-02-15T14:37:22.684Z",
+    "location": {
+      "name": "Chaos, FL"
+    },
+    "company": {
+      "name": "MS Breezy Trial"
+    }
+  },
+  {
+    "id": "088ac6d52139",
+    "friendly_id": "088ac6d52139-open-position",
+    "name": "Open Position",
+    "url": "https://breezy.breezy.hr/p/088ac6d52139-open-position",
+    "published_date": "2023-04-06T01:32:13.932Z",
+    "location": {
+      "name": "New York, NY"
+    },
+    "company": {
+      "name": "MS Breezy Trial"
+    }
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "@apply-fleet/tracking",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/alias.test.ts test/links.test.ts test/ack.test.ts test/reconcile.test.ts"
+  },
+  "dependencies": {
+    "@apply-fleet/data": "*",
+    "@apply-fleet/shared": "*"
+  }
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "uuid": "2f0674e6-f01f-4ecd-b459-e947241c211f",
+    "name": "Account Executive - Accountants Channel (East Coast)",
+    "department": {
+      "id": "Sales",
+      "label": "Sales"
+    },
+    "url": "https://ats.rippling.com/rippling/jobs/2f0674e6-f01f-4ecd-b459-e947241c211f",
+    "workLocation": {
+      "label": "Remote (Connecticut, US)",
+      "id": "Remote (Connecticut, US)"
+    }
+  },
+  {
+    "uuid": "94ac7084-9b63-4e9f-9e2a-fd5da349172d",
+    "name": "Account Executive, Broker Channel (Atlanta) ",
+    "department": {
+      "id": "Sales",
+      "label": "Sales"
+    },
+    "url": "https://ats.rippling.com/rippling/jobs/94ac7084-9b63-4e9f-9e2a-fd5da349172d",
+    "workLocation": {
+      "label": "Remote (Atlanta, Georgia, US)",
+      "id": "Remote (Atlanta, Georgia, US)"
+    }
+  },
+  {
+    "uuid": "f0c952f1-a4c7-478b-baf6-18bedf96e01d",
+    "name": "Account Executive, Broker Channel (Philadelphia)",
+    "department": {
+      "id": "Sales",
+      "label": "Sales"
+    },
+    "url": "https://ats.rippling.com/rippling/jobs/f0c952f1-a4c7-478b-baf6-18bedf96e01d",
+    "workLocation": {
+      "label": "Remote (United States)",
+      "id": "Remote (United States)"
+    }
+  },
+  {
+    "uuid": "94486f41-6474-446a-b67a-c164e11354ea",
+    "name": "Account Executive, Broker Channel (Pittsburgh / Cleveland)",
+    "department": {
+      "id": "Sales",
+      "label": "Sales"
+    },
+    "url": "https://ats.rippling.com/rippling/jobs/94486f41-6474-446a-b67a-c164e11354ea",
+    "workLocation": {
+      "label": "Cleveland, OH",
+      "id": "Cleveland, OH"
+    }
+  }
+]

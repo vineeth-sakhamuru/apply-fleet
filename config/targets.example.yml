@@ -1,0 +1,211 @@
+# Which job boards the fleet polls. Edit this, not the source.
+#
+# Every board below was verified live (it returned real postings) before being
+# committed — an unverified slug is worse than no slug, because a dead board
+# looks identical to "that ATS is broken".
+#
+# Adding a company:
+#   1. find its board slug (the company segment of its careers URL)
+#   2. add it under the right ats
+#   3. run:  node packages/discovery/bench/probe-targets.ts
+#      keep it only if it comes back with a job count
+#
+# Slug formats per ATS:
+#   greenhouse       boards.greenhouse.io/<slug>
+#   lever            jobs.lever.co/<slug>
+#   ashby            jobs.ashbyhq.com/<slug>
+#   smartrecruiters  jobs.smartrecruiters.com/<Slug>        (case-sensitive)
+#   workable         apply.workable.com/<slug>
+#   recruitee        <slug>.recruitee.com
+#   breezy           <slug>.breezy.hr
+#   personio         <slug>.jobs.personio.de
+#   bamboohr         <slug>.bamboohr.com
+#   teamtailor       <slug>.teamtailor.com                  (regional sites are
+#                    <name>.na.teamtailor.com — the slug is then "<name>.na")
+#   rippling         ats.rippling.com/<slug>
+#   jazzhr           <slug>.applytojob.com
+#   jobvite          app.jobvite.com/CompanyJobs/xml.aspx?c=<companyId>
+#                    the id is opaque, so each one is labelled below; find it in
+#                    the jobs.jobvite.com/<name> page source (the "q…" token)
+#   icims            careers-<slug>.icims.com               (some tenants sit at
+#                    careersN-<slug>; pass that whole label as the slug)
+#   workday          "<tenant>:<datacenter>:<site>"  from
+#                    <tenant>.<dc>.myworkdayjobs.com/<site>
+#   eightfold        self-hosted board; give host + search query (browser-driven)
+#
+# Not configurable here: `linkedin` has no per-company feed — it's served by the
+# query-driven Apify provider, which the orchestrator calls directly.
+
+# How wide to cast the net and how hard to push.
+settings:
+  # Only surface postings newer than this. Tighten toward 24 for speed-to-post.
+  max_age_hours: 720
+  # In-flight feed requests. Unbounded fan-out makes Workday tenants drop out
+  # entirely (they throttle under burst); 8 kept every board alive in testing.
+  concurrency: 8
+  # Minutes between discovery cycles.
+  poll_minutes: 15
+
+boards:
+  greenhouse:
+    - anthropic
+    - datadog
+    - brex
+    - samsara
+    - cloudflare
+    - scaleai
+    - gitlab
+    - airbnb
+    - reddit
+    - affirm
+    - lyft
+    - coinbase
+    - figma
+    - flexport
+    - asana
+    - robinhood
+    - postman
+    - sofi
+    - duolingo
+    - chime
+    - twitch
+    - discord
+    - mixpanel
+    - airtable
+    - amplitude
+    - dropbox
+    - stripe
+    - databricks
+    - pinterest
+    - elastic
+    - mongodb
+    - instacart
+
+  lever:
+    - veeva
+    - shieldai
+    - palantir
+    - matchgroup
+    - ro
+
+  ashby:
+    - openai
+    - elevenlabs
+    - clickhouse
+    - cohere
+    - ramp
+    - notion
+    - replit
+    - supabase
+    - render
+    - modal
+    - linear
+    - runway
+
+  workday:
+    - nvidia:wd5:nvidiaexternalcareersite
+    - salesforce:wd12:External_Career_Site
+    - adobe:wd5:external_experienced
+    - workday:wd5:Workday
+    - autodesk:wd1:Ext
+    - paypal:wd1:jobs
+    - ebay:wd5:apply
+
+  smartrecruiters:
+    - WesternDigital
+    - Visa
+    - Experian
+    - Wise
+    - Socotec
+
+  # Workable's widget feed answers for any account that exists, so HTTP 200
+  # means nothing on its own — each slug here was kept only because the feed
+  # came back holding open jobs.
+  workable:
+    - tp-link-usa-corp
+    - worthai
+    - rokt
+    - seeq
+    - fortanix
+    - enfos-inc
+
+  recruitee:
+    - joinready
+    - greatminds
+    - resourcefultalentgroup
+    - allshoretalent
+    - zensai
+    - somniosoftware
+
+  breezy:
+    - transact-campus
+    - matroid
+    - blenderbox
+    - clever-real-estate
+    - mind-computing
+    - pri
+
+  bamboohr:
+    - alkira
+    - selectorsoftware
+    - lendio
+    - canopy
+    - level
+
+  teamtailor:
+    - softwarefinder.na
+    - swishanalytics.na
+    - crossmint.na
+    - wagepoint
+    - dabble
+    - iqm
+
+  # iCIMS publishes no JSON — these are read out of the portal's iframe HTML.
+  # The defense-side tenants (Peraton, GDMS, Markon, SciRes, i2x/ISYS, Intrepid)
+  # carry a lot of US-only software work.
+  icims:
+    - peraton
+    - markon
+    - scires
+    - gdms
+    - appliedsystems
+    - i2xisys
+    - kyocera
+    - intrepidsolutions
+
+  jazzhr:
+    - g2ops
+    - validity
+    - snapsheet
+    - atg
+    - modernclassroomsproject
+    - finconsus
+
+  # Jobvite keys its XML feed by an opaque company id, never a name. Only one
+  # tenant is listed on purpose, for two reasons:
+  #   - every Jobvite apply URL is the same path (/CompanyJobs/Careers.aspx)
+  #     with the job in the query string, and normalize.ts's dedupe key drops
+  #     the query — so the whole family collapses to a single job no matter how
+  #     many tenants are listed. Fix that key before widening this list.
+  #   - the feeds are ~14MB each and app.jobvite.com starts 429ing after one or
+  #     two in a cycle.
+  # Verified live and ready to add once dedupe is fixed (id — company, postings
+  # seen): qmRaVfw2 Visionist 74, qG2bVfwy SynQor 34, qsSaVfw9 Lowenstein
+  # Sandler 18, q0QaVfwF CDW 5, qXQaVfwC GS1 US 3.
+  jobvite:
+    - quYbVfwi   # NinjaOne
+
+  rippling:
+    - rippling
+
+  # Personio is a German ATS and its boards are EU-side; expect little US work.
+  personio:
+    - getsafe
+
+# Self-hosted boards with no public feed. Client-rendered, so these are read
+# through the fleet's browser rather than a JSON fetch.
+eightfold:
+  - host: apply.careers.microsoft.com
+    company: Microsoft
+    query: software engineer intern
+    location: United States

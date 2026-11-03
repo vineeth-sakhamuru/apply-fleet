@@ -1,0 +1,142 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Teamtailor",
+  "items": [
+    {
+      "id": "3ce2c88b-cbc6-4ae9-8ecb-000466c69037",
+      "title": "Group Financial Controller",
+      "url": "https://career.teamtailor.com/jobs/8124573-group-financial-controller",
+      "date_published": "2026-07-24T13:57:16+02:00",
+      "_jobposting": {
+        "@type": "JobPosting",
+        "title": "Group Financial Controller",
+        "identifier": {
+          "@type": "PropertyValue",
+          "name": "Teamtailor",
+          "value": 8124573
+        },
+        "datePosted": "2026-07-24T13:57:16+02:00",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Teamtailor",
+          "sameAs": "https://career.teamtailor.com"
+        },
+        "jobLocation": [
+          {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "\u00d6stg\u00f6tagatan 16",
+              "addressLocality": "Stockholm",
+              "postalCode": "116 21",
+              "addressCountry": "SE",
+              "addressRegion": "Sweden"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "4ff07fd5-3ac0-4333-8f4c-955380396321",
+      "title": "UK Account Executive - SMB + Mid-Market",
+      "url": "https://career.teamtailor.com/jobs/8118064-uk-account-executive-smb-mid-market",
+      "date_published": "2026-07-24T09:05:16+02:00",
+      "_jobposting": {
+        "@type": "JobPosting",
+        "title": "UK Account Executive - SMB + Mid-Market",
+        "identifier": {
+          "@type": "PropertyValue",
+          "name": "Teamtailor",
+          "value": 8118064
+        },
+        "datePosted": "2026-07-24T09:05:16+02:00",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Teamtailor",
+          "sameAs": "https://career.teamtailor.com"
+        },
+        "jobLocation": [
+          {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "16 Laystall Court",
+              "addressLocality": "London",
+              "postalCode": "EC1R 4",
+              "addressCountry": "GB",
+              "addressRegion": "Europe"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "3f282139-7ca5-47da-ba92-52486118f92d",
+      "title": "Senior Account Executive - Chicago",
+      "url": "https://career.teamtailor.com/jobs/8110423-senior-account-executive-chicago",
+      "date_published": "2026-07-22T17:41:21+02:00",
+      "_jobposting": {
+        "@type": "JobPosting",
+        "title": "Senior Account Executive - Chicago",
+        "identifier": {
+          "@type": "PropertyValue",
+          "name": "Teamtailor",
+          "value": 8110423
+        },
+        "datePosted": "2026-07-22T17:41:21+02:00",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Teamtailor",
+          "sameAs": "https://career.teamtailor.com"
+        },
+        "jobLocation": [
+          {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "125 S Clark St",
+              "addressLocality": "Chicago",
+              "postalCode": "60603",
+              "addressCountry": "US",
+              "addressRegion": "North America"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "29a426f0-3fa0-4228-bce9-a4ef8492505a",
+      "title": "Marketing Internship at Teamtailor",
+      "url": "https://career.teamtailor.com/jobs/8064903-marketing-internship-at-teamtailor",
+      "date_published": "2026-07-14T13:10:01+02:00",
+      "_jobposting": {
+        "@type": "JobPosting",
+        "title": "Marketing Internship at Teamtailor",
+        "identifier": {
+          "@type": "PropertyValue",
+          "name": "Teamtailor",
+          "value": 8064903
+        },
+        "datePosted": "2026-07-14T13:10:01+02:00",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Teamtailor",
+          "sameAs": "https://career.teamtailor.com"
+        },
+        "jobLocation": [
+          {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "\u00d6stg\u00f6tagatan 16",
+              "addressLocality": "Stockholm",
+              "postalCode": "116 21",
+              "addressCountry": "SE",
+              "addressRegion": "Sweden"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

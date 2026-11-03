@@ -1,0 +1,39 @@
+{
+  "totalFound": 2,
+  "content": [
+    {
+      "id": "744000133907678",
+      "name": "Sr. Manager",
+      "refNumber": "REF97395W",
+      "company": {
+        "identifier": "Visa",
+        "name": "Visa"
+      },
+      "releasedDate": "2026-06-24T10:00:11.853Z",
+      "location": {
+        "city": "Austin",
+        "region": "TX",
+        "country": "us",
+        "fullLocation": "Austin, TX, United States",
+        "remote": false
+      }
+    },
+    {
+      "id": "744000129971988",
+      "name": "Director",
+      "refNumber": "REF97388Z",
+      "company": {
+        "identifier": "Visa",
+        "name": "Visa"
+      },
+      "releasedDate": "2026-06-03T11:08:12.368Z",
+      "location": {
+        "city": "Bengaluru",
+        "region": "KA",
+        "country": "in",
+        "fullLocation": "Bengaluru, KA, India",
+        "remote": false
+      }
+    }
+  ]
+}

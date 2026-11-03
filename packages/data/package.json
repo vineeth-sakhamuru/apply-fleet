@@ -1,0 +1,21 @@
+{
+  "name": "@apply-fleet/data",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "migrate": "node bin/migrate.ts",
+    "set-secret": "node bin/set-secret.ts",
+    "test": "node --test test/roundtrip.test.ts test/config.test.ts test/emails.test.ts test/targets.test.ts test/migrate.test.ts"
+  },
+  "dependencies": {
+    "@apply-fleet/shared": "*",
+    "yaml": "^2.6.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.2.0"
+  }
+}

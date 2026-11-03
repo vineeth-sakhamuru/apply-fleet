@@ -1,0 +1,77 @@
+<!doctype html>
+<!-- Golden fixture modeled on an Ashby application form (Ramp's ATS).
+     Uses a single "Name" field and Ashby-style question wording. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ramp — Software Engineer, New Grad</title>
+  </head>
+  <body>
+    <h1>Software Engineer, New Grad</h1>
+    <form id="application-form" onsubmit="return false">
+      <label for="name">Name *</label>
+      <input id="name" name="_systemfield_name" type="text" required />
+
+      <label for="email">Email *</label>
+      <input id="email" name="_systemfield_email" type="email" required />
+
+      <label for="location">Location *</label>
+      <input id="location" name="location" type="text" required />
+
+      <label for="linkedin">LinkedIn URL</label>
+      <input id="linkedin" name="linkedin" type="url" />
+
+      <label for="resume">Resume *</label>
+      <input id="resume" name="_systemfield_resume" type="file" required />
+
+      <label for="auth">Are you authorized to work in the United States? *</label>
+      <select id="auth" name="auth" required>
+        <option value="">Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="sponsor">Do you now or will you in the future require visa sponsorship? *</label>
+      <select id="sponsor" name="sponsor" required>
+        <option value="">Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="why">Why do you want to work at Ramp?</label>
+      <textarea id="why" name="why"></textarea>
+
+      <label for="eeo_gender">Gender Identity</label>
+      <select id="eeo_gender" name="eeo_gender">
+        <option value="">Select an option</option>
+        <option value="man">Man</option>
+        <option value="woman">Woman</option>
+        <option value="decline">I don't wish to answer</option>
+      </select>
+
+      <!-- Ashby-style CUSTOM choice group: a backing checkbox + Yes/No <button>s,
+           no native select/radio. Regression guard for scanner coverage. -->
+      <div class="ashby-application-form-field-entry _fieldEntry_test">
+        <label>Are you willing to work 3+ days per week out of our office? *</label>
+        <input type="checkbox" name="onsite_7f3a" style="position: absolute; opacity: 0" />
+        <button type="button" id="onsite_yes" data-opt="Yes" onclick="pickChoice(this)">Yes</button>
+        <button type="button" id="onsite_no" data-opt="No" onclick="pickChoice(this)">No</button>
+      </div>
+
+      <button id="submit" type="submit">Submit Application</button>
+    </form>
+
+    <script>
+      function pickChoice(btn) {
+        const box = btn.closest('.ashby-application-form-field-entry');
+        box.querySelectorAll('button').forEach((b) => b.removeAttribute('data-selected'));
+        btn.setAttribute('data-selected', '1');
+        const cb = box.querySelector('input[type="checkbox"]');
+        if (cb) cb.checked = btn.dataset.opt === 'Yes';
+      }
+      document.getElementById('submit').addEventListener('click', (e) => {
+        e.currentTarget.setAttribute('data-clicked', '1');
+      });
+    </script>
+  </body>
+</html>

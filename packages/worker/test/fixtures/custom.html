@@ -1,0 +1,69 @@
+<!doctype html>
+<!-- Custom, non-ATS application form (Palantir-style). Deliberately non-semantic:
+     no <form>, no <label for>, contenteditable "inputs", a div-based custom
+     dropdown, and a div-based segmented button group. The per-ATS DOM scanner
+     keys off input/select/textarea + Ashby containers, so it finds ~nothing here
+     — this is the fixture the vision fallback tier exists for. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Palantir — Software Engineer</title>
+    <style>
+      body { font: 14px sans-serif; margin: 24px; width: 520px; }
+      .q { margin-bottom: 18px; }
+      .q-title { font-weight: 600; margin-bottom: 6px; }
+      .cf-input, .cf-textarea, .cf-select {
+        display: block; min-height: 28px; border: 1px solid #999; padding: 6px; background: #fff;
+      }
+      .cf-textarea { min-height: 72px; }
+      .cf-segmented { display: flex; gap: 8px; }
+      .cf-opt { border: 1px solid #999; padding: 6px 16px; cursor: pointer; user-select: none; }
+      .cf-opt[data-selected] { background: #2a6; color: #fff; }
+    </style>
+  </head>
+  <body>
+    <h1>Software Engineer — Application</h1>
+
+    <div class="q">
+      <div class="q-title">Full Name</div>
+      <div id="fld_name" class="cf-input" contenteditable="true" data-field="name"></div>
+    </div>
+
+    <div class="q">
+      <div class="q-title">Email Address</div>
+      <div id="fld_email" class="cf-input" contenteditable="true" data-field="email"></div>
+    </div>
+
+    <div class="q">
+      <div class="q-title">Phone</div>
+      <div id="fld_phone" class="cf-input" contenteditable="true" data-field="phone"></div>
+    </div>
+
+    <div class="q">
+      <div class="q-title">Why do you want to work here?</div>
+      <div id="fld_why" class="cf-textarea" contenteditable="true" data-field="why"></div>
+    </div>
+
+    <div class="q">
+      <div class="q-title">Preferred Office</div>
+      <div id="fld_office" class="cf-select" role="combobox" tabindex="0" data-field="office">Select an office…</div>
+    </div>
+
+    <div class="q">
+      <div class="q-title">Authorized to work in the US?</div>
+      <div id="fld_auth" class="cf-segmented" data-field="work_auth">
+        <div class="cf-opt" data-val="Yes" onclick="pick(this)">Yes</div>
+        <div class="cf-opt" data-val="No" onclick="pick(this)">No</div>
+      </div>
+    </div>
+
+    <button id="submit" type="button">Submit Application</button>
+
+    <script>
+      function pick(opt) {
+        opt.parentElement.querySelectorAll('.cf-opt').forEach((o) => o.removeAttribute('data-selected'));
+        opt.setAttribute('data-selected', '1');
+      }
+    </script>
+  </body>
+</html>

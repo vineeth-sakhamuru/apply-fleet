@@ -1,0 +1,20 @@
+node_modules/
+dist/
+*.local
+.DS_Store
+.env
+.env.*
+*.sqlite
+*.sqlite-*
+data/*.db
+data/*.db-shm
+data/*.db-wal
+# Filled-form screenshots — contain real PII (name, phone, address).
+data/previews/
+data/*.png
+
+# Real config carries PII — commit only the *.example.yml templates
+config/profile.yml
+config/answers.yml
+config/resume.yml
+config/*.bak-*
